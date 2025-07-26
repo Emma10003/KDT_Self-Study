@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_연산자_2</title>
+</head>
+<body>
+    <h1>비교 연산자</h1>
+    <!-- ( ==, !=, >, <, >=, <= )-->
+
+    <pre>
+        - 좌변과 우변을
+        같다, 같지 않다, 초과, 미만, 이상, 이하 비교해서
+        맞을 경우 true, 아닐 경우 false 값을 반환하는 연산자
+        (연산 결과로 boolean(논리 값)을 반환)
+
+        - 복합 기호를 사용할 때 등호(=) 는 무조건 오른쪽에 작성
+          = equal 영어 사용
+    </pre>
+
+    <hr>
+    <h3>
+        입력된 두 수가 같은지 확인
+        <div>
+        <label>
+            1번 : 
+            <input type="text" id="comValue1"> <br>
+        </label>
+        <label>
+            2번 : 
+            <input type="text" id="comValue2"> <br>
+        </label>
+        <button id="btn1" onclick="비교기능1번()">비교하기</button>
+        <span id="result1"></span>
+        </div>
+    </h3>
+    <script>
+        // 두 수가 같은지 비교
+
+        // 1. cv1 변수이름에 comValue1 을 바라보는 요소 설정
+        const cv1 = document.getElementById("comValue1");
+        // 2. cv2 변수이름에 comValue2 를 바라보는 요소 설정
+        const cv2 = document.getElementById("comValue2");
+        // 3. result1 변수이름에 result1을 바라보는 요소 설정
+        const result1 = document.getElementById("result1");
+
+        // 4. 비교기능1번() 기능 내부에서 cv1 과 cv2 의 value 값을 가져오는
+        //    v1 v2 변수이름 설정
+        function 비교기능1번(){
+            const v1 = cv1.value;   // Number(cv1.value) 숫자로 변환 처리
+            const v2 = cv2.value;
+            // 5. innerText 로 (v1 == v2) 값이 같을경우 다를경우 결과 확인
+            result1.innerText = v1 == v2;   // true,false로 결과가 나옴.
+           /*
+            == (equal) : 두 자리 이상의 값이 다른지 같은지에 대해서 비교
+                        오직 '값'만 비교. (문자이든 숫자이든 상관 X)
+                        자료형이 다르더라도 암묵적으로 형 변환을 하여 비교
+            === (strict equal) : 두 자리 이상의 값들이 값과 자료형 모두 일치하는지 비교
+                                 형 변환을 하지 않고, 엄격하게 일치하는지 판단
+            
+            '5' == 5   // true) 문자열 5가 숫자 5로 변환되어 비교됨
+            '5' === 5  // false ) 자료형이 다르므로 false
+           */
+        }
+        
+    </script>
+    
+
+</body>
+</html>
