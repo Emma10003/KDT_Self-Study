@@ -38,7 +38,7 @@ DB연결, Email 아이디 인증키 와 같은 설정은 대문자로 작성
 // script 가 포함된 HTML 문서 내부에서
 // input1 이라고 작성된 id를 포함한 태그를 바라보겠다 설정.
 const num1 = document.getElementById("input1");   // 여기에 .value 쓰지 X!!
-const num1 = document.getElementById("input2");
+const num2 = document.getElementById("input2");
 const reslt = document.getElementById("계산결");
 
 function minusFn(){
@@ -52,4 +52,28 @@ function minusFn(){
     const value2 = num2.value;
     // num1.value라는 건 num1이라는 변수 안에 담긴 값인 'document.getElementByID("input1")'을 바라보겠다는 뜻으로
     // num1.value와 document.getElementByID("input").value;는 동일한 기능을 하는 코드.
+
+    // input 은 기본으로 글자일 수 있기 때문에
+    // 글자를 숫자로 감싸는 형변환 작업 진행
+    reslt.innerText = Number(value1) - Number(value2);
+}
+
+function multiFn(){
+    const value1 = Number(num1.value);
+    const value2 = Number(num2.value);
+
+    reslt.innerText = value1 * value2;
+}
+
+function divFn(){
+    reslt.innerText = Number(num1.value) / Number(num2.value);
+}
+
+function modFn(){
+    /* 나머지 연산(%)은 나누기 계산 시
+    몫이 정수인 부분까지만 계산하고 남은 나머지 값을 출력한다.
+     */
+    const val1 = Number(num1.value);
+    const val2 = Number(num2.value);
+    reslt.innerText = value1 % value2;
 }
