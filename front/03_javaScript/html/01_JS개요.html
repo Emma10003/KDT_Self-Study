@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01_JS개요</title>
+  </head>
+  <body>
+    <h1>Srcipt 언어란 ?</h1>
+    <pre>
+        기본 프로그램의 동작을 
+        사용자의 요구에 맞게 수행되도록 해주는 용도의 언어
+
+        별도의 소스코드 컴파일(이진수 번역)을 하지 않고
+        Interpreter(인터프리터, 한 줄씩 코드를 읽어서 해석하는 기계, 기능)
+        를 이용해서 코드를 바로 실행
+
+        - 장점 : 컴파일에 소요되는 시간이 없음
+        - 단점 : 프로그램 실행 시간이 상대적으로 느림
+    </pre>
+    <h1>JavaScript 란?</h1>
+    <pre>
+        웹 브라우저(크롬, 엣지, 웨일, 파이어폭스 등)에서
+        주로 사용하는 인터프리터 방식의 객체 지향 프로그래밍 언어
+        ECMA Script 표준을 따르는 대표적인 웹 기술
+        (JS 버전 이름 : ES5, ES6, ES7 .....)
+    </pre>
+    <hr />
+    <h1>JavaScript 코드 작성 방법</h1>
+    <ol>
+      <li>브라우저 개발자도구 -> console 직접 작성</li>
+      <li>
+        HTML 내부에 script 태그를 이용해서 작성(Internal 방식)
+        <br />
+        <!-- 버튼이 클릭 되었을 때 internalFn() 함수를 호출(실행) -->
+        <button type="button" onclick="inernalFn()">Internal 방식 확인!</button>
+        <script>
+          // <script> 태그를 작성하는 순간부터 javaScript 언어를 작성할 수 있음
+          // 한 줄 주석
+          /* 
+            script 범위 태그 주석 : JS 코드를 주석으로 작성할 수 있고,
+            설명이나 표기를 작성할 수 있음
+            */
+          // function : 함수, 기능
+          /*
+
+            매개변수(=파라미터) : 중간에 개입하여 값을 변하게 하는 변수이름위치
+            媒介變數 중매 매  개입할 개 변할 변 셀 수
+            function 함수이름(매개변수 자리) {
+                기능에 대해서 작성하는 공간!
+            }
+
+            function 함수이름(매개변수의 값이 없을 수 있음) {
+                기능에 대해서 작성하는 공간!
+            }
+            function 함수이름() {
+               함수기능에 대해 작성하는 공간
+            }
+
+            function 함수이름(매개변수의 값이 1개 이상일 수 있음) {
+                기능에 대해서 작성하는 공간!
+            }
+            function 함수이름(name1, name2, name3,... ) {
+               함수기능에 대해 작성하는 공간
+            }
+            */
+          // JS 부터는 Alt L Alt O 로 킨 브라우저가 작동하지 않을 수 있음
+          // 파일이 위치한 폴더를 열어 html 파일을 여는 방식
+          function inernalFn() {
+            // alert : 경고, 알리다 (JS : 알림창, 메세지)
+            alert("버튼이 클릭되었습니다.");
+          }
+        </script>
+      </li>
+      <li>
+        HTML 외부에 존재하는 .js 파일을 연결해서 사용하는 방법(External 방식)
+        <br />
+        <button type="button" onclick="externalFn()">External 방식 확인</button>
+        <!-- html 외부에 작성한 js 확장자 연결하는 방법
+         <script src="js파일위치/js파일명.js"></script>
+        -->
+      </li>
+    </ol>
+    <hr />
+    <h1>JS 맛보기</h1>
+    <button type="button" onclick="밝음모드()">라이트 모드</button>
+    <button type="button" onclick="어두움모드()">다크 모드</button>
+
+    <h1>매개변수로 색상 변경하기 맛보기</h1>
+    <button type="button" onclick="블루모드('lightblue')">파란색 모드</button>
+    <script>
+      const 바디 = document.querySelector("body"); //body 태그 내 정보를 바디 라는 이름에 담아주기
+      //  위 버튼에서 전달받은 'lightblue' 컬러가
+      // 색상 이라는 변수이름에 담겨지고
+      // 담겨진 'lightblue' 는 배경색상으로 변경
+      function 블루모드(색상) {
+        바디.style.backgroundColor = 색상;
+      }
+    </script>
+    <script src="../js/01_JS개요.js"></script>
+  </body>
+</html>
