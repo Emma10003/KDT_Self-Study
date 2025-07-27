@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트_event_value</title>
+    <link rel="stylesheet" href="../css/08_이벤트_event.css" />
+  </head>
+  <body>
+    <h1>이벤트, e, event, value, target</h1>
+    <pre>
+        1. e와 event는 같은 것!
+        e 와 event는 모두 이벤트 객체
+        <code>
+            function 기능1번(e){
+                // 기능 1번에 해당하는 기능 내용들
+            }
+            function 기능2번(event){
+                // 기능 2번에 해당하는 기능 내용들
+            }
+        </code>
+    </pre>
+
+    <div class="예제1번클래스">
+      <div>예제 1: e와 event는 동일하다.</div>
+      <pre>
+            function 클릭처리1(e){
+                console.log("e 사용: ", e.type)
+            }
+
+            function 클릭처리2(event){
+                console.log("event 사용: ", event.type)
+            }
+        </pre
+      >
+      <div class="실습클래스">
+        <button id="btn-e">e 사용 버튼</button>
+        <button id="btn-event">event 사용 버튼</button>
+        <div id="result1" class="결과">버튼을 클릭해보세요.</div>
+      </div>
+    </div>
+
+    <div class="예제2번클래스">
+      <div>예제 2: target 사용법</div>
+      <pre>
+            function 타겟확인(e){
+                console.log("클릭된 요소: ", e.target.tagName);
+                console.log("요소   내용: ", e.target.textContent);
+            }
+        </pre
+      >
+      <div class="실습클래스">
+        <button class="target-btn" id="btn-A">버튼A</button>
+        <button class="target-btn" id="btn-B">버튼B</button>
+      </div>
+      <span
+        class="target-btn"
+        id="btn-C"
+        style="padding: 8px; background: #ffc107; cursor: pointer"
+        >스팬 요소</span
+      >
+      <div class="결과" id="result2">요소를 클릭해보세요.</div>
+    </div>
+
+    <div class="예제3번클래스">
+      <div>예제 3: value 사용법</div>
+      <pre>
+        function 값확인(e){
+          console.log("입력값: ", e.target.value);
+          console.log("입력 타입: ", e.target.type);
+        }
+      </pre>
+      <div class="실습클래스">
+        <input type="text" id="text-input" placeholder="텍스트 입력" />
+        <input type="number" id="number-input" placeholder="숫자 입력" />
+        <select
+          id="select-input"
+          name="추후 DB/백엔드로 value값을 전달하기 위한 변수이름 설정"
+        >
+          <option value="">선택하세요</option>
+          <option value="option1">옵션1</option>
+          <option value="옵션2">옵션2</option>
+        </select>
+        <div id="result3" class="결과">입력하거나 선택해보세요.</div>
+      </div>
+    </div>
+
+    <div class="예제4번클래스">
+      <div>예제 4: 종합 활용</div>
+      <pre>
+        function 로그인처리(e){
+          e.preventDefault();   // 폼 제출 방지
+          const 사용자명 = document.getElementById("username").value;
+          const 비밀번호 = document.getElementById("password").value;
+
+          console.log("폼 제출 이벤트: ", e.type);
+          console.log("제출     버튼: ", e.target);
+          console.log("사 용 자 명  : ", 사용자명);
+        }
+      </pre>
+      <div class="실습클래스">
+        <form id="login-form">
+          <input type="text" id="username" placeholder="사용자이름" required />
+          <input type="password" id="userPw" placeholder="비밀번호" required />
+          <button type="submit">로그인</button>
+        </form>
+        <div id="result4" class="결과">
+          폼을 작성하고 로그인 버튼을 클릭해보세요.
+        </div>
+      </div>
+    </div>
+    <script src="../js/08_이벤트_event.js"></script>
+  </body>
+</html>

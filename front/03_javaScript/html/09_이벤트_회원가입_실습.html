@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 실습</title>
+  </head>
+  <body>
+    <h1>회원가입 실습하기</h1>
+    <div class="container">
+      <h2>비밀번호 확인 시스템</h2>
+      <form id="signup-form">
+        <div class="실습문제1">
+          <div>실습문제 1: 비밀번호 확인하기</div>
+          <div class="실습클래스">
+            <input type="password" id="password" placeholder="비밀번호 입력" />
+            <input
+              type="password"
+              id="password-confirm"
+              placeholder="비밀번호 확인"
+            />
+            <div id="password-result" class="결과">
+              비밀번호를 입력하고 확인란에서 엔터를 입력하시오.
+            </div>
+          </div>
+        </div>
+      </form>
+      <script>
+        // const 명칭 = password passwordConfirm passwordResult
+        // keyup 을 이용해서 Enter 키 입력이 확인되면
+        // if 문을 활용해서 비밀번호가 일치하는지 확인하고,
+        // 비밀번호가 일치하면 '비밀번호가 일치합니다!'와 함께
+        // 비밀번호 길이  : 글자
+        // 비밀번호 글자수: 입력한 글자 수
+        // else 비밀번호가 일치하지 않는다면
+        // 원본 비밀번호:
+        // 확인 비밀번호: 값 확인
+        // 응용편
+        // 비밀번호가 "" 빈 값이라면 '비밀번호를 입력하세요.' 보여주기
+
+        const password = document.getElementById("password");
+        const passwordConfirm = document.getElementById("password-confirm");
+        const passwordResult = document.getElementById("password-result");
+
+        passwordConfirm.addEventListener("keyup", function (e) {
+          if (e.key === "Enter") {
+            if (password.value === "" || passwordConfirm.value === "") {
+              passwordResult = `비밀번호를 입력하세요.`;
+            } else if (password.value === passwordConfirm.value) {
+              passwordResult.textContent = `비밀번호가 일치합니다!
+                입력한 비밀번호: ${password.value}
+                비밀번호 길이: ${password.value.length}
+                `;
+              // 입력한 비밀번호: ${password}         -> 결과) [object HTMLInputElement]
+              // 비밀번호 길이: ${password.length}   -> 결과) undefined
+            } else {
+              passwordResult.textContent = `비밀번호가 일치하지 않습니다.
+            원본 비밀번호: ${password.value}
+            확인 비밀번호: ${passwordConfirm.value}
+            `;
+            }
+          }
+        });
+      </script>
+    </div>
+  </body>
+</html>
