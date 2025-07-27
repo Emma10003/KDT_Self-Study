@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 관련 태그</title>
+  </head>
+  <body>
+    <h1>img 태그</h1>
+
+    <pre>
+        - 웹 문서에서 사진이나 그림 같은 이미지를 삽입하는 용도의 태그
+    
+        [속성]
+        (속성 : 시작 태그에 작성하는 내용)
+
+        1. src : 삽입할 이미지의 경로를 작성하는 속성
+                (파일 위치, 인터넷 주소)
+        2. width / height : 너비 / 높이를 지정하는 속성
+
+        3. alt(대안) : 이미지 설명을 작성하는 속성
+            ->이미지가 출력되지 않는 경우 화면에 이미지 대신 글자 출력
+             + 스크린 리더가 이미지의 설명을 읽어줌
+    </pre>
+
+    <h3>img 예시</h3>
+    <img
+      src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202001/01/e5472ff3-f2f2-415f-ae8a-95ede4a81109.jpg"
+    />
+
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+
+    <h2>절대 경로로 이미지 출력하기</h2>
+    <pre>
+        절대 경로 : 변하지 않는 기준점으로부터 목표 까지의 경로
+        (서울 종로구 삼일대로 17길 51 5층)
+
+        - 윈도우 기준 : C드라이브, D드라이브 이 기준 이미지의 경로나 파일 경로 설정
+    </pre>
+    <img
+      src="C:\Users\tj\Desktop\frontend-workspace\01_HTML\images\cats\cat1.jpg"
+      alt="고양이사진"
+    />
+    <!-- 컴퓨터 절대 경로는 라이브 서버로 확인 불가능 -->
+
+    <hr />
+    <h2>상대 경로로 이미지 확인하기</h2>
+
+    <pre>
+        상대 경로 : 현재 파일/ 페이지 위치를 기준으로 하여
+        목표 까지의 경로를 나타내는 것
+        (오른쪽 뒤에 뒤에 뒤에 분한테 전달해줘)
+        (학원 1층으로 내려가서 왼쪽으로 가면 음식점)
+    </pre>
+
+    <img src="images/cats/cat1.jpg" alt="고양이 사진" />
+    <!-- 컴퓨터 상대 경로는 라이브 서버로 확인 가능 -->
+
+    <hr />
+    <h2>고정 크기 단위(px) : 항상 고정된 크기를 지님</h2>
+    <!--
+    평균 width 기준으로 기기 너비 예상
+    1. desktop  대형 모니터 1440 ~ 1920 px
+    2. notebook 노트북     1280 ~ 1440 px
+    3. tablet   태블릿      768 ~ 1024 px
+    4. mobile(가로) 핸드폰   640 ~ 768  px
+    5. mobile(세로) 핸드폰   360 ~ 430  px
+
+    우리가 mm 나 cm 를 사용하는 것처럼
+    컴퓨터에서는 가로 세로 크기 단위를 px로 기본값을 가짐
+    -->
+    <img src="images/dogs/dog1.jpg" width="300px" height="240px" />
+    <img src="images/dogs/dog2.jpg" width="300px" height="240px" />
+    <img src="images/dogs/dog3.jpg" width="300px" height="240px" />
+
+    <h2>가변 크기 단위(%) : 화면 또는 영역에 대한 상대적인 크기 단위</h2>
+    <!-- 화면 너비의 15% 만큼을 img 너비로 지정 -->
+    <img src="images/flowers/flower1.jpg" width="15%" height="240px" />
+    <img src="images/flowers/flower2.jpg" width="15%" height="240px" />
+    <img src="images/flowers/flower3.jpg" width="15%" height="240px" />
+
+    <hr />
+    <h2>고정 + 가변 크기</h2>
+    <pre>
+        고정 크기로 설정된 태그 내부에서
+        일정한 크기의 이미지 또는 태그를 출력하고 싶을 때
+        가변 크기(%)를 이용해서 지정
+    </pre>
+
+    <!-- 
+    이미지가 들어가는 구역(div)의 넓이를 1280px로 설정했기 때문에 
+    안의 이미지 크기를 가변 크기로 설정했어도 사진의 크기가 화면 크기에 따라 바뀌지 않는다.
+    대신 스크롤이 생김!
+    -->
+    <div style="width: 1280px; height: 300px">
+      <img src="images/cats/cat1.jpg" width="25%" height="70%" />
+      <img src="images/dogs/dog1.jpg" width="25%" height="70%" />
+      <img src="images/flowers/flower1.jpg" width="25%" height="70%" />
+    </div>
+  </body>
+</html>
