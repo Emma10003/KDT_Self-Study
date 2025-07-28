@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>주말메뉴 선택하기</title>
+    <link rel="stylesheet" href="../css/11_주말메뉴선택하기.css" />
+  </head>
+  <body>
+    <h1>주말 메뉴 뽑기</h1>
+    <div>
+      <h3>
+        오늘의 주말 메뉴:
+        <span id="menuResult"></span>
+      </h3>
+      <button id="selectBtn">뽑기</button>
+    </div>
+    <script>
+      // 치킨 피자 햄버거 족발 보쌈 찜닭
+      // 1. const 이용해서 menuResult  selectBtn 만들기
+      const menuResult = document.getElementById("menuResult");
+      const selectBtn = document.getElementById("selectBtn");
+
+      // 2. menus 이용해서 배열 생성
+      const menus = ["치킨", "피자", "햄버거", "족발", "보쌈", "찜닭"];
+
+      selectBtn.addEventListener("click", function (e) {
+        // 3. Math floor Math random 이용해서 난수 생성
+        //      menus 배열 index 범위 내에서
+        const mr = Math.random();
+        const randomNumber = Math.floor(mr * menus.length); // index 범위 내
+
+        // 난수 번째 index 요소 값을 화면에 출력
+        // textContent 이용해서 출력
+        console.log("menuResult.innerText: ", menus[randomNumber]); // 콘솔 로그 기록 보기
+        menuResult.innerText = menus[randomNumber];
+      });
+    </script>
+  </body>
+</html>
