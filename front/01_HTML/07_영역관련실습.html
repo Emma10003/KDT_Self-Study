@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>유튜브 영상 웹사이트로 가져오기</title>
+    </head>
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+    <body>
+        <h1>유튜브 영상 웹사이트로 가져오기</h1>
+        <!--
+        유튜브에서 원하는 영상을 3가지 선택해서
+        iframe으로 삽입
+        width = 560
+        height = 316
+        -->
+
+        <!--
+        div 태그로 가로 사이즈 500 세로 사이즈 500 감싼 후
+        구글 맵에서 동대문 종합시장 위치를
+        공유하여 iframe으로 위치 div 내부에 가져오기
+        -->
+
+        <iframe
+            width="560"
+            height="316"
+            src="https://www.youtube.com/embed/IZDTMu3QOpw?si=9NLwANZCNHmq8O-K"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+        ></iframe>
+        <iframe
+            width="560"
+            height="316"
+            src="https://www.youtube.com/embed/96y_mR-CSQA?si=wJx4Ey0Nhv_yQMCq"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+        ></iframe>
+        <iframe
+            width="560"
+            height="316"
+            src="https://www.youtube.com/embed/UHZJi-bAuWU?si=jzri2oTjSDqug16-"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+        ></iframe>
+        <h1>구글맵 지도 iframe으로 가져오기</h1>
+        <div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1581.164214505564!2d127.00526638877274!3d37.57088329300942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca322d29cc2e3%3A0x36df4e2aefb0e66!2z64-Z64yA66y47KKF7ZWp7Iuc7J6l!5e0!3m2!1sko!2skr!4v1754208220224!5m2!1sko!2skr"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </div>
+    </body>
+</html>

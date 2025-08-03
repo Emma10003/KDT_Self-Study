@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>영역 관련 태그</title>
+        <style>
+            div,
+            span {
+                /*
+            border: 선 관련 속성
+            border: 1px         solid       black;
+                    선 두께      실선         선 색상
+            */
+                border: 1px solid black;
+            }
+
+            .r {
+                background-color: red;
+                width: 300px;
+                height: 300px;
+            }
+
+            .test {
+                width: 200px;
+                height: 200px;
+            }
+
+            .g {
+                background-color: green;
+            }
+
+            /* y 클래스 명칭에 background-color:yellow; 넣어주기 */
+            .y {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>sytle 태그 내용 적용 확인</h3>
+        <div class="test g"></div>
+        <div class="r"></div>
+        <div class="y test"></div>
+
+        <h1>block 형식</h1>
+        <pre>
+            -화면(공간) 수직 분할
+            (세로 화면을 가로로 잘라서 층(행)을 나눔)
+
+            - 한 층(한 행)을 모두 차지함
+            
+            - width, height와 같은 크기 지정 속성 사용 가능
+
+            - block 형식의 태그의
+            h1 ~ h6(제목), p/pre(문단), hr(수평선), div(영역 분할)
+            시맨틱 태그(div 태그에 이름을 넣는 태그)
+        </pre>
+
+        <h3>h3는 block 형식의 태그입니다.</h3>
+        <pre>
+            block 형식은 작성된 내용이 짧더라도
+            한 줄을 모두 차지하려는 성질 때문에
+            다음 태그 내용은 다음 줄에 작성됩니다.
+        </pre>
+        <pre>
+            pre 옆에 가로로 해서 이어서 작성할 수 없다는 의미로
+            태그를 닫고 열 때 마다 층을 구분지어서 생성됨
+        </pre>
+
+        <h1>inline 형식</h1>
+        <pre>
+            - 화면을 수평 분할
+            (가로 화면을 세로로 잘라서 호(열)을 나눔)
+
+            - 한 층(행)을 모두 차지하지 않음
+                -> 내부에 작성된 내용 크기만큼 차지함
+            
+            - width, height와 같은 크기 지정 속성 사용 불가
+
+            - inline 형식의 태그
+                b(굵게), i(기울이기), mark(글 배경 칠하기), span(영역 분할) 등
+        </pre>
+        <p>
+            <strong>inline 형식은</strong>
+            <em>행을 분할하고 한 열에서 이어서 작성되는 성질을 가지고 있어</em>
+            <mark>줄이 바뀌지 않고 계속 옆으로 작성된다.</mark>
+            <br /><!-- 줄 바꿈 태그 -->
+            <span class="y">첫 번째 span</span>
+            <span class="r">두 번째 span</span>
+            <span class="g">세 번째 span</span>
+        </p>
+
+        <h1>inline-block 형식</h1>
+        <pre>
+            - inline의 특징 중 수평 분할(줄을 세로로 자름, 열 나눔)
+            - block 의 특징 중 크기 지정 가능
+            장점을 합쳐놓은 태그를
+            
+            - 대표적인 태그: img 태그, iframe 태그를
+
+            iframe 태그
+            - 웹 문서(html) 내부에 또 다른 웹 문서를 추가하는 태그
+        </pre>
+
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/nZqGj__q5tk?si=cJ0T6jeVQxV3E2v6"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+        ></iframe>
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/0Dl_ku5EyPE?si=eJDnW7cEnpGM74i-"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+        ></iframe>
+
+        <!-- iframe은 옆으로 나란히 삽입할 수 있다! -> inline-block 형식 -->
+    </body>
+</html>
