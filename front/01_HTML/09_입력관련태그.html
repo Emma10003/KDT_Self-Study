@@ -15,6 +15,7 @@
         [속성]
         1) action : 제출될 곳을 지정하는 속성 (제출할 주소를 작성)
         2) method(방식) : 설정된 곳으로 데이터를 전달하는 방식
+                - 서버에 저장할 것인지, 서버에 저장된 데이터를 호출할 것인지 방식 선택
         3) name : 이름을 지정하는 속성 (JS 사용)
         4) target : 제출된 페이지를 현재/새 탭으로 열기
     </pre
@@ -31,9 +32,132 @@
         >
 
         <h3>form, input 테스트</h3>
-        <form action="result.html"><!-- 버튼을 클릭해서 제출하면 result.html 으로 이동함-->
-            이름 <input type="text" name="user-name"/>
+        <form action="result.html">
+            <!-- 버튼을 클릭해서 제출하면 result.html 으로 이동함-->
+            이름 <input type="text" name="user-name" />
             <button>제출버튼</button>
         </form>
+        <hr />
+
+        <h3>text 관련 input 태그</h3>
+        <pre>
+            type="text" : 한 줄 텍스트 입력 상자 (기본값)
+
+            type="password" : 비밀번호 입력 상자 (모자이크 처리)
+            type="url"
+            type="search"
+            type="tel"
+            type="email"
+            -> 모양은 text 와 동일, 용도 구분용 (+ 유효성 검사)
+        </pre>
+        <form action="result.html">
+            아이디 : <input type="text" name="input-id" />
+            <br />
+            비밀번호 : <input type="password" name="input-pw" />
+            <button>로그인(제출)</button>
+        </form>
+        <hr />
+        <h3>숫자 관련 input 태그</h3>
+        <pre>
+            type="number" : 숫자만 입력 가능한 입력상자
+
+            type="range"  : 슬라이드 바를 이용해 숫자를 지정
+                            (단독 사용 불가, JavaScript 와 혼합해서 사용 가능)
+
+            [속성]
+            1. min : 최소값
+            2. max : 최대값
+            3. step : 숫자가 증가 / 감소하는 간격(단계)
+            4. value : 초기값(기본값) 지정
+        </pre>
+        <!--
+        min: 최소값     max: 최대값
+        step: 숫자 커지거나 줄어드는 단위 범위
+        value: 초기 기본값 세팅
+        -->
+        <form action="result.html">
+            점수입력 :
+            <input
+                type="range"
+                min="0"
+                max="100"
+                step="5"
+                value="100"
+                name="score1"
+            />
+            <br />
+            <input
+                type="number"
+                min="0"
+                max="100"
+                step="5"
+                value="30"
+                name="score2"
+            />
+            <button>제출</button>
+        </form>
+
+        <hr />
+        <h3>날짜/시간 관련 input 태그</h3>
+        <ul>
+            <li><input type="date" /></li>
+            <li><input type="month" /></li>
+            <li><input type="week" /></li>
+            <li><input type="time" /></li>
+            <li><input type="datetime-local" /></li>
+        </ul>
+
+        <hr />
+        <h3>radio, checkbox</h3>
+        <pre>
+            - 여러 연관된 값을 묶어서 선택하는 경우에 사용
+
+            - radio : 여러 값 중 하나 선택
+            ex) 성별
+
+            - checkbox : 여러 값 중 원하는 모든 것 선택
+            ex) 상세검색, 관심분야, 취미
+
+            <strong style="color: red;">
+                연관된 radio, checkbox는 같은 name 속성 값을 가져야 한다.
+            </strong>
+        </pre>
+
+        <h4>radio 확인</h4>
+        <input type="radio" name="team" />A팀
+        <input type="radio" name="team" />B팀
+        <input type="radio" name="team" />C팀
+        <input type="radio" name="team" />D팀
+
+        <h4>checkbox 확인</h4>
+        <input type="checkbox" name="color" />RED
+        <input type="checkbox" name="color" />YELLOW
+        <input type="checkbox" name="color" />ORANGE
+        <input type="checkbox" name="color" />GREEN
+
+        <h3>label 태그</h3>
+        <pre>
+            - 입력 관련 태그 (input, select, textarea 등)의 제목을 나타내는 태그
+
+            - 사용법1 : label 태그 내부에 입력 관련 태그 하나 작성하면
+                       label 태그를 클릭해도 입력 관련 태그가 선택된다.
+
+            - 사용법2 : 입력 관련 태그의 id 속성 값을
+                       label 태그의 for 속성 값에 똑같이 적으면 연결된다.
+        </pre>
+        <label>클릭! <input type="checkbox" /></label>
+
+        <hr />
+        <input type="checkbox" id="test" />
+        <br />
+        <label for="test">
+            <img src="images/dogs/dog4.jpg" width="200px" height="200px" />
+            <br />
+            for에 작성된 명칭과 id에 작성된 명칭이 동일하다면 명칭이 동일한
+            체크박스가 선택됩니다.
+        </label>
+        <!-- 위의 경우, 사진이나 텍스트를 클릭해도 체크박스가 선택됨. -->
+
+        <br /><br /><br /><br /><br /><br />
     </body>
 </html>
