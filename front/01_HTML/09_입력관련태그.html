@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>입력 관련 태그</title>
+    </head>
+    <body>
+        <h1>form 태그 / input 태그</h1>
+        <h3>form 태그</h3>
+        <pre>
+        - 입력 양식을 작성하는 판(영역, 공간)
+        - 내부에 작성된 입력값을 지정된 곳으로 제출하는 역할
+
+        [속성]
+        1) action : 제출될 곳을 지정하는 속성 (제출할 주소를 작성)
+        2) method(방식) : 설정된 곳으로 데이터를 전달하는 방식
+        3) name : 이름을 지정하는 속성 (JS 사용)
+        4) target : 제출된 페이지를 현재/새 탭으로 열기
+    </pre
+        >
+
+        <h3>input 태그</h3>
+        <pre>
+        - 웹 문서에서 사용자(클라이언트)가 입력할 수 있는 양식을 제공하는 태그
+        - 많은 타입이 존재하고, input의 변형 형태도 다수 존재하고
+
+        * input 태그에는 name 속성이 필수로 작성되어야 한다.
+        (꼭은 아니지만 작성하는 경우가 80% 이상으로 많음)
+    </pre
+        >
+
+        <h3>form, input 테스트</h3>
+        <form action="result.html"><!-- 버튼을 클릭해서 제출하면 result.html 으로 이동함-->
+            이름 <input type="text" name="user-name"/>
+            <button>제출버튼</button>
+        </form>
+    </body>
+</html>
