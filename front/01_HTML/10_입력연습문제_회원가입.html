@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>회원가입 폼</title>
+        <style>
+            label {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="#">
+            <!--
+        required: 필수로 작성해야 하는 input 태그 소겅
+        버튼을 클릭하여 제출할 때, 작성되어 있지 않으면 제출하지 못하도록 방지
+         -->
+
+            <!--
+        input value : 소비자가 작성하지 않았을 때 데이터를 빈 값으로 전달하지 않도록 기본값 설정
+                      input-email/text 에서는 초기 기본값을 설정해주지 않는 이상 value는 필요하지 않음
+                      하지만
+                      input-checkbox/radio/option 과 같이 개발자가 정해놓은 값을 소비자가 설정해야 할 경우에는
+                      소비자가 선택한 값이 무엇인지 개발자가 지정해줄 필요가 있음.
+        -->
+            <label
+                >이름:
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="이름을 입력하세요"
+                    required
+            /></label>
+
+            <!--
+            readonly = SNS 이메일을 가지고 오거나
+            소비자가 수정하지 못하고 인지한 후,
+            동의에 대한 절차를 진행해야 할 때 주로 사용.
+            -->
+            <h4>SNS에서 이메일 가지고 온 후 회원가입 진행할 때</h4>
+            <label>
+                이메일 :
+                <input
+                    type="email"
+                    name="username"
+                    value="google@google.com"
+                    readonly
+                />
+            </label>
+
+            <label
+                >비밀번호:
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="비밀번호를 입력하세요"
+                    required
+            /></label>
+            <label
+                >성별:
+                <select name="gender">
+                    <option value="남성">남성</option>
+                    <option value="여성">여성</option>
+                    <option value="미공개">미공개</option>
+                </select>
+            </label>
+
+            <button>제출하기</button>
+        </form>
+    </body>
+</html>
