@@ -124,16 +124,16 @@
         </pre>
 
         <h4>radio 확인</h4>
-        <input type="radio" name="team" />A팀
-        <input type="radio" name="team" />B팀
-        <input type="radio" name="team" />C팀
-        <input type="radio" name="team" />D팀
+        <input type="radio" name="team" value="A" />A팀
+        <input type="radio" name="team" value="B" />B팀
+        <input type="radio" name="team" value="C" />C팀
+        <input type="radio" name="team" value="D" />D팀
 
         <h4>checkbox 확인</h4>
-        <input type="checkbox" name="color" />RED
-        <input type="checkbox" name="color" />YELLOW
-        <input type="checkbox" name="color" />ORANGE
-        <input type="checkbox" name="color" />GREEN
+        <input type="checkbox" name="color" value="RED" />RED
+        <input type="checkbox" name="color" value="YELLOW" />YELLOW
+        <input type="checkbox" name="color" value="ORANGE" />ORANGE
+        <input type="checkbox" name="color" value="GREEN" />GREEN
 
         <h3>label 태그</h3>
         <pre>
@@ -157,6 +157,134 @@
             체크박스가 선택됩니다.
         </label>
         <!-- 위의 경우, 사진이나 텍스트를 클릭해도 체크박스가 선택됨. -->
+
+        <hr />
+        <h3>select / option 태그</h3>
+        <pre>
+            - select : 클릭하면 밑으로 메뉴가 내려오는 입력 태그 (=드롭다운)
+
+            - option : select 클릭 시 보여질 메뉴를 작성하는 태그
+
+            * select 와 option은
+                input의 name, value가 분리된 태그로 생각하면 된다.
+        </pre>
+
+        <!--
+        radio, checkbox 에서 선택한 값을 java나 DataBase 로 전달할 때
+        name              : value                     형태로 전달
+        전달값을 담을 바구니  : 실제로 소비자가 선택한 전달값
+        -->
+        <input type="radio" name="food" value="초밥" /> 초밥
+        <input type="radio" name="food" value="샐러드" /> 샐러드
+        <input type="radio" name="food" value="라면" /> 라면
+        <input type="radio" name="food" value="햄버거" /> 햄버거
+        <br /><br /><br />
+        <select name="menu">
+            <option>초밥</option>
+            <option>샐러드</option>
+            <option>라면</option>
+            <option>햄버거</option>
+        </select>
+
+        <hr />
+        <h3>textarea</h3>
+        <pre>
+            text area 글자 지역
+            - 여러 줄을 입력할 수 있는 입력 상자
+
+            [속성]
+            - name : 제출되는 곳에서 데이터를 읽을 때 필요한 이름
+            - rows : textarea 의 행 크기를 지정 (rows="5" -> 5행)
+            - cols : textarea 의 열 크기를 지정 (cols="5" -> 5열)
+        </pre>
+
+        <!--
+        textarea 는 기본적으로 사이즈를 소비자가 마음대로 조정할 수 있음
+        사이즈 조정을 원하지 않는다면
+            style 내부에 "resize: none" 설정해서 사이즈 조정 금지
+        -->
+        <textarea name="intro" rows="5" cols="30" style="resize: none">
+            이름 : 
+            나이 : 
+            주소 :
+        </textarea>
+
+        <br>
+        <h3>버튼 태그</h3>
+        <pre>
+            - 버튼을 만드는 태그
+
+            - type: 속성 값에 따라서 동작이 달라짐
+
+            type="submit" : 제출 버튼을 만들 때 사용
+            (button 태그의 기본 값 == type 속성을 작성하지 않으면 자동 submit 설정)
+
+            type="reset" : 버튼이 포함된 form 태그의 모든 입력 값을 초기화
+
+            type="button" : 아무런 기능이 없는 버튼
+                            -> 제출 이외에 개발자가 원하는 기능으로 커스텀해서 사용할 때 사용
+                               JavaScript에서 기능 작성하고 추가하는 용도의 버튼
+        </pre>
+
+        <input type="color"><!-- 색상 선택 가능 -->
+        <br>
+        <input type="file"><!-- 파일 업로드 -->
+        <br>
+        <input type="hidden" value="숨겨진 값, 소비자 눈에 보이지 않는 input 태그">
+
+        <h3>fieldset / legend</h3>
+        <pre>
+            fieldset : 테두리를 만들어서 영역을 지정
+                       주로 form 태그 내부에서 입력 요소의 그룹을 구분할 때 사용
+
+            legend(제목) : fieldset 테두리에 이름을 지정하는 태그
+        </pre>
+
+        <hr>
+        <!-- action 내부에 #을 작성하면 다른 페이지로 이동하지 않겠다(개발 단계이다). 설정 -->
+        <form action="#">
+            <fieldset>
+                <legend>필수 입력 사항</legend>
+                <label>아이디 : <input type="text" name="input-id"></label>
+                <br>
+                <label>비밀번호 : <input type="password" name="input-pw"></label>
+            </fieldset>
+
+            <fieldset>
+                <legend>선택 입력 사항</legend>
+                <label>주소 : <input type="text" name="address" size="70"></label>
+            </fieldset>
+            <br>
+            
+            <!-- 아래 항목 2가지 모두 제출 버튼 -->
+             <button type="submit">제출1번 버튼</button>
+             <button>제출2번 버튼</button>  <!-- type="submit"으로 기본값 설정된 상태 -->
+             <button type="reset">모두 지우는 초기화 버튼</button>
+             <button type="button">그냥 버튼</button>
+        </form>
+
+        <script>
+            /*
+            버튼을 클릭했을 때 본인인증 페이지로 이동하거나,
+            비밀번호 찾기, 아이디 찾기를 진행할 때 새 페이지를 조그맣게 열거나(팝업)
+
+            회원가입을 진행하기 전에 모두 입력하라는 대로 작성되었는지 확인하고
+            form 제출을 진행할 때 사용
+            */
+            document
+            .querySelector("[type=button]")
+            .addEventListener("click", ()=>{
+                alert("그냥 버튼이 클릭되었는지 확인해보고 있습니다.");
+            })
+        </script>
+
+
+
+
+
+
+
+
 
         <br /><br /><br /><br /><br /><br />
     </body>
