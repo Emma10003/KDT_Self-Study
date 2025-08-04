@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>window 내장객체</title>
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="../css/23_window내장객체.css" />
+        <link rel="icon" type="image/png" href="../img/red-apple.png" />
+    </head>
+    <body>
+        <div class="container">
+            <button id="open-25stopWatch">스톱워치</button>
+            <hr />
+            <hr />
+            팝업창에서 읽어갈 값: <input type="text" id="readValue" />
+            <button id="open-24popUp">팝업창(자식) 열기</button>
+            <hr />
+            팝업창에서 작성한 값: <input type="text" id="writeValue" />
+        </div>
+
+        <script>
+            const open24PopUp = document.getElementById("open-24popUp");
+            open24PopUp.addEventListener("click", () => {
+                // 옵션 여러 개 줄 때 - 팝업창 위치 지정
+                let options = [];
+                options.push("width=400");
+                options.push("height=400");
+
+                const width = window.screen.width; // 화면의 가로 너비
+                const height = window.screen.height; // 화면의 세로 너비
+                const left = (width - 400) / 2;
+                const top = (height - 400) / 2;
+                // 옵션 리스트에 추가
+                options.push(`left=${left}`);
+                options.push(`top=${top}`);
+
+                window.open("24_팝업창.html", "_blank", options.toString());
+            });
+
+            const open25stopWatch = document.getElementById("open-25stopWatch");
+            document.getElementById("open_25stopWatch");
+            open25stopWatch.addEventListener("click", () => {
+                let options = [];
+                options.push("width=500");
+                options.push("height=400");
+                const width = window.screen.width;
+                const height = window.screen.height;
+                const left = (width - 500) / 2;
+                const top = (height - 400) / 2;
+
+                options.push(`left=${left}`);
+                options.push(`top=${top}`);
+
+                window.open("25_스톱워치.html", "_blank", options.toString());
+            });
+        </script>
+    </body>
+</html>
